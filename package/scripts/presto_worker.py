@@ -26,7 +26,7 @@ class Worker(Script):
     def install(self, env):
         from params import java_home
         Execute('wget --no-check-certificate {0} -O /tmp/{1}'.format(PRESTO_RPM_URL, PRESTO_RPM_NAME))
-        Execute('export JAVA8_HOME={0} && rpm -i /tmp/{1}'.format(java_home, PRESTO_RPM_NAME))
+        Execute('export JAVA_HOME={0} && rpm -i /tmp/{1}'.format(java_home, PRESTO_RPM_NAME))
         self.configure(env)
 
     def stop(self, env):
@@ -58,7 +58,7 @@ class Worker(Script):
             for key, value in node_properties.iteritems():
                 f.write(key_val_template.format(key, value))
             f.write(key_val_template.format('node.id', str(uuid.uuid4())))
-            f.write(key_val_template.format('node.data-dir', '/var/lib/presto'))
+            f.write(key_val_template.format('node.data-dir', '/var/lib/trino'))
 
         with open(path.join(config_directory, 'jvm.config'), 'w') as f:
             f.write(jvm_config['jvm.config'])

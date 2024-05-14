@@ -19,16 +19,16 @@
   <services>
     <service>
       <name>PRESTO</name>
-      <displayName>Presto</displayName>
-      <comment>Presto is an open source distributed SQL query engine for running
+      <displayName>Trino</displayName>
+      <comment>Trino is an open source distributed SQL query engine for running
         interactive analytic queries against data sources of all sizes ranging
         from gigabytes to petabytes.
       </comment>
-      <version>316</version>
+      <version>447</version>
       <components>
         <component>
           <name>PRESTO_COORDINATOR</name>
-          <displayName>Presto coordinator</displayName>
+          <displayName>Trino coordinator</displayName>
           <category>MASTER</category>
           <cardinality>1</cardinality>
           <versionAdvertised>true</versionAdvertised>
@@ -41,7 +41,7 @@
 
         <component>
           <name>PRESTO_WORKER</name>
-          <displayName>Presto worker</displayName>
+          <displayName>Trino worker</displayName>
           <category>SLAVE</category>
           <cardinality>0+</cardinality>
           <versionAdvertised>true</versionAdvertised>
@@ -53,7 +53,7 @@
 
         <component>
           <name>PRESTO_CLI</name>
-          <displayName>Presto command line interface</displayName>
+          <displayName>Trino command line interface</displayName>
           <category>CLIENT</category>
           <cardinality>1+</cardinality>
           <versionAdvertised>true</versionAdvertised>

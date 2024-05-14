@@ -32,7 +32,7 @@ presto_worker.py to no longer hard code node.data-dir but instead pick it up fro
 node.properties.xml
   <property>
     <name>node.data-dir</name>
-    <value>/var/lib/presto</value>
+    <value>/var/lib/trino</value>
     <description>
       The location (filesystem path) of the data directory. Presto will store
       logs and other data here.
@@ -42,7 +42,7 @@ node.properties.xml
 
   <property>
     <name>plugin.config-dir</name>
-    <value>/etc/presto/catalog</value>
+    <value>/etc/trino/catalog</value>
     <description>
       Configuration directory for plugins. This is where you should place
       connector property files.
@@ -51,7 +51,7 @@ node.properties.xml
 
   <property>
     <name>plugin.dir</name>
-    <value>/usr/lib/presto/lib/plugin</value>
+    <value>/usr/lib/trino/plugin</value>
     <description>
       Library directory for plugins.
     </description>
