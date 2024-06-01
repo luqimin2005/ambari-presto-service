@@ -1,0 +1,35 @@
+{
+  "name": "default",
+  "description": "default quick links configuration",
+  "configuration": {
+    "protocol":
+    {
+      "type":"http",
+      "checks":[
+        {
+          "property":"ssl_enable",
+          "desired":"false",
+          "site":"trino-site"
+        }
+      ]
+    },
+
+    "links": [
+      {
+        "name": "coor_ui",
+        "label": "Coordinator WEB-UI",
+        "requires_user_name": "false",
+        "component_name": "PRESTO_COORDINATOR",
+        "url":"%@://%@:%@/",
+        "port":{
+          "http_property": "http-server.http.port",
+          "http_default_port": "8285",
+          "https_property": "http-server.http.port",
+          "https_default_port": "8285",
+          "regex": "^(\\d+)$",
+          "site": "trino-site"
+        }
+      }
+    ]
+  }
+}
